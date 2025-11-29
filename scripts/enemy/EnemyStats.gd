@@ -11,3 +11,11 @@ var enemy: Enemy
 
 func _init(e): # Construtor da classe: necessita Enemy
 	enemy = e
+
+func recalculate_stats() -> void:
+	# Primeiro volta aos valores base, dps aplica o bonus da wave atual
+	total_health = enemy.base_stats.health
+	total_damage = enemy.base_stats.damage
+	total_move_speed = enemy.base_stats.move_speed
+	
+	## FALTANDO O CALCULO PELO NUMERO DA WAVE
