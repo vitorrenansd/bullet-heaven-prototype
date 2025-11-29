@@ -20,10 +20,10 @@ func add_modifier(modifier: StatsModifier) -> void:
 # Recalcula todos os atributos baseado nos stats base + modificadores
 func _recalculate_stats() -> void:
 	# Primeiro volta aos valores base
-	final_health = base_stats.base_health
-	final_damage = base_stats.base_damage
-	final_attack_speed = base_stats.base_attack_speed
-	final_move_speed = base_stats.base_move_speed
+	final_health = base_stats.health
+	final_damage = base_stats.damage
+	final_attack_speed = base_stats.attack_speed
+	final_move_speed = base_stats.move_speed
 	
 	# Aplica todos os modificadores ativos
 	for m in modifiers:
