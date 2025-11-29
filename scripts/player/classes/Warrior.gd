@@ -1,4 +1,4 @@
-class_name WarriorBaseStats
+class_name Warrior
 extends Resource
 
 ## Futuramente podem ser criadas outras classes para outros bonecos (mago, tanker, etc)
