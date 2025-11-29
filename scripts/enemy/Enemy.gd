@@ -9,5 +9,5 @@ var enemy_ai: EnemyAI
 
 func _ready():
 	current_stats = EnemyStats.new(self)
-	enemy_ai = EnemyAI.new()
+	enemy_ai = EnemyAI.new(self)
 	current_stats.recalculate_stats()
