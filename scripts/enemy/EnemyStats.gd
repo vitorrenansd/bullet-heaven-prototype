@@ -5,7 +5,7 @@ extends Node
 @export var total_health: int
 @export var total_damage: float
 @export var total_attack_speed: float = 0.75
-@export var total_move_speed: float = 200.0
+@export var total_move_speed: float
 var enemy: Enemy
 
 
