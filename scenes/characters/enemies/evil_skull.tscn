@@ -13,11 +13,13 @@ metadata/_custom_type_script = "uid://cjpdnr74atjjo"
 radius = 13.0
 
 [node name="EvilSkull" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_42evj")
 base_stats = SubResource("Resource_w6con")
 
 [node name="EvilSkullSprite" type="Sprite2D" parent="."]
-position = Vector2(0, -30)
+position = Vector2(0, -26)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_ms5kv")
 

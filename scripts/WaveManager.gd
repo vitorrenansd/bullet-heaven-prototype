@@ -8,9 +8,8 @@ extends Node2D
 
 
 func _ready():
-	for i in range(20):
+	for i in range(1):
 		spawn_enemies()
-	
 
 ## esse metodo ta feito com a bunda!!!!
 ## corrigir para depois
