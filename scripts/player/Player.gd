@@ -8,10 +8,14 @@ signal health_depleted
 @export var current_stats: PlayerStats
 var movement: PlayerMovement
 
+
 func _ready(): # Chama quando o obj fica prontos
 	current_stats = PlayerStats.new(self)
 	movement = PlayerMovement.new(self)
 	current_stats.recalculate_stats()
+	
+	var weapon = get_node("Pistol")
+	weapon.setup(current_stats)
 
 func _physics_process(delta): # Usa a movimentação da classe PlayerMovement
 	movement.tick(delta)
