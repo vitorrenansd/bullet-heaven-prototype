@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dbeg4hryviajr"]
 
-[ext_resource type="Script" uid="uid://dablvr2ohl3g4" path="res://scripts/BulletPhysics.gd" id="1_dnt7v"]
-[ext_resource type="Texture2D" uid="uid://r0sjbbeawoj4" path="res://assets/weapons/pistol/bullet.png" id="2_1t05q"]
+[ext_resource type="Script" uid="uid://drel5stej72ln" path="res://scripts/weapon/BulletPhysics.gd" id="1_dnt7v"]
+[ext_resource type="Texture2D" uid="uid://cao141c1sm8ub" path="res://assets/weapons/pistol/bullet.png" id="2_1t05q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5plp"]
 size = Vector2(16, 8)
