@@ -26,9 +26,9 @@ func lock_n_load() -> void:  ## Função que locka e atira no inimigo mais proxi
 		look_at(nearest_enemy.global_position)
 		fire()
 
-func fire():
-	var new_bullet = BULLET.instantiate()
-	new_bullet.global_position = shooting_point.global_position
-	new_bullet.global_rotation = shooting_point.global_rotation
+func fire() -> void:
+	var new_bullet = self.BULLET.instantiate()
+	new_bullet.global_position = self.shooting_point.global_position
+	new_bullet.global_rotation = self.shooting_point.global_rotation
 	get_tree().current_scene.add_child(new_bullet)
 	shoot_timer.start() ## Reseta cooldown

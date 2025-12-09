@@ -9,20 +9,19 @@ signal health_depleted
 @onready var movement = $PlayerMovement
 
 
-func _ready(): # Chama quando o obj fica prontos
-	current_stats = PlayerStats.new(self)
-	movement = PlayerMovement.new(self)
-	current_stats.recalculate_stats()
+func _ready(): # Chama quando o obj fica pronto
+	self.current_stats = PlayerStats.new(self)
+	self.current_stats.recalculate_stats()
 	
 	var weapon = get_node("Pistol")
 	weapon.setup(current_stats)
 
 func _physics_process(delta): # Usa a movimentação da classe PlayerMovement
-	movement.tick(delta)
+	self.movement.tick(delta)
 
 func add_modifier(modifier: StatsModifier) -> void: # Add item na run atual do player
-	modifiers.append(modifier)
-	current_stats.recalculate_stats()
+	self.modifiers.append(modifier)
+	self.current_stats.recalculate_stats()
 
 func take_damage(amount: float) -> void:
 	var hp = self.current_stats.current_health

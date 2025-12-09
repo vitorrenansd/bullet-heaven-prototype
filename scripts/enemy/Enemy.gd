@@ -3,22 +3,21 @@ extends CharacterBody2D
 
 @export var base_stats: Resource # Recebe um tipo de inimigo (evil skull, ...)
 @export var current_stats: EnemyStats
-var enemy_ai: EnemyAI
 var can_attack := true
 
 
 func _ready():
-	current_stats = EnemyStats.new(self)
-	current_stats.recalculate_stats()
+	self.current_stats = EnemyStats.new(self)
+	self.current_stats.recalculate_stats()
 
-func attack(player: Player):
-	if not can_attack:
+func attack(player: Player) -> void:
+	if not self.can_attack:
 		return
 	
-	can_attack = false
+	self.can_attack = false
 	player.take_damage(current_stats.damage)
-	await get_tree().create_timer(current_stats.attack_speed).timeout
-	can_attack = true
+	await get_tree().create_timer(self.current_stats.attack_speed).timeout
+	self.can_attack = true
 
 func take_damage(amount: float) -> void:
 	var hp = self.current_stats.current_health
