@@ -4,7 +4,7 @@ extends CharacterBody2D
 signal health_depleted
 
 @export var base_stats: Resource # Recebe uma classe de player (warrior, mago, ...)
-@export var modifiers: Array[StatsModifier] = [] # Lista de modificadores ativos (itens)
+var modifiers: Array[StatsModifier] = [] # Lista de modificadores ativos (itens)
 @export var current_stats: PlayerStats
 @onready var movement = $PlayerMovement
 
