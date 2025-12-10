@@ -15,13 +15,13 @@ func attack(player: Player) -> void:
 		return
 	
 	self.can_attack = false
-	player.take_damage(current_stats.damage)
-	await get_tree().create_timer(self.current_stats.attack_speed).timeout
+	player.take_damage(current_stats.get_damage())
+	await get_tree().create_timer(self.current_stats.get_attack_speed()).timeout
 	self.can_attack = true
 
 func take_damage(amount: float) -> void:
-	var hp = self.current_stats.current_health
+	var hp = self.current_stats.get_current_health()
 	hp = ceil(hp - amount) # Arredonda pra cima
-	self.current_stats.current_health = hp
+	self.current_stats.set_current_health(hp)
 	if hp <= 0.0:
 		queue_free() # morre/exclui
