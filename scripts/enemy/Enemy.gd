@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 @export var base_stats: Resource # Recebe um tipo de inimigo (evil skull, ...)
 @export var current_stats: EnemyStats
-var can_attack := true
+var can_attack: bool = true
 
 
 func _ready():
