@@ -4,6 +4,7 @@ extends Area2D
 var travelled_distance = 0
 const SPEED = 1000
 const MAX_RANGE = 1200
+@export var damage: float = 0.0 # damage é dado no metodo fire() de Weapon
 
 
 func _physics_process(delta):
@@ -16,4 +17,4 @@ func _physics_process(delta):
 func _on_body_entered(body):
 	queue_free()
 	if body.has_method("take_damage"):
-		body.take_damage(5.0)
+		body.take_damage(self.damage)

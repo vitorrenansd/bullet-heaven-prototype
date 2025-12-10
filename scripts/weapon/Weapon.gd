@@ -41,6 +41,7 @@ func fire() -> void:
 	var new_bullet = self.BULLET.instantiate()
 	new_bullet.global_position = self.shooting_point.global_position
 	new_bullet.global_rotation = self.shooting_point.global_rotation
+	new_bullet.damage = current_stats.get_damage()
 	get_tree().current_scene.add_child(new_bullet)
 	# Reseta cooldown
 	shoot_timer.start()
