@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c0dtmhnxdbhgl"]
+
+[ext_resource type="Texture2D" uid="uid://bth2uudka5ltl" path="res://assets/entities/player/placeholder_player.png" id="1_508ok"]
+[ext_resource type="Resource" uid="uid://cqqhx4hwxtnr" path="res://scripts/entities/player/data/mage.tres" id="2_dr1lc"]
+[ext_resource type="PackedScene" uid="uid://c1mcch81vn0jd" path="res://scripts/weapons/pistol/pistol.tscn" id="3_686vu"]
+[ext_resource type="Script" uid="uid://d4bsxujtqn3ml" path="res://scripts/entities/player/player.gd" id="3_exd8k"]
+[ext_resource type="Script" uid="uid://8q1kh7v0hvd5" path="res://scripts/entities/player/player_movement.gd" id="4_hss88"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_exd8k"]
+radius = 14.0
+
+[node name="Player" type="CharacterBody2D" unique_id=909419159]
+script = ExtResource("3_exd8k")
+base_stats = ExtResource("2_dr1lc")
+
+[node name="PlaceholderPlayerSprite" type="Sprite2D" parent="." unique_id=154642813]
+position = Vector2(0, -25)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_508ok")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=661486686]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_exd8k")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=983739111]
+
+[node name="Pistol" parent="." unique_id=893236779 instance=ExtResource("3_686vu")]
+position = Vector2(0, -11)
+
+[node name="PlayerMovement" type="Node" parent="." unique_id=1540048118]
+script = ExtResource("4_hss88")

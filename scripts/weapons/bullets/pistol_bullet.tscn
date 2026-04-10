@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbeg4hryviajr"]
+[gd_scene format=3 uid="uid://dbeg4hryviajr"]
 
-[ext_resource type="Script" uid="uid://dfoqhlm80nb1i" path="res://scripts/weapons/BulletPhysics.gd" id="1_dnt7v"]
+[ext_resource type="Script" uid="uid://dfoqhlm80nb1i" path="res://scripts/weapons/bullets/bullet_physics.gd" id="1_dnt7v"]
 [ext_resource type="Texture2D" uid="uid://b33aaoitjdh3a" path="res://assets/weapons/pistol/bullet.png" id="2_1t05q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5plp"]

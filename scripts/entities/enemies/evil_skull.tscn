@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b83w8xqkquk6c"]
+
+[ext_resource type="Script" uid="uid://0ue2he3n474m" path="res://scripts/entities/enemies/enemy.gd" id="1_7pusy"]
+[ext_resource type="Resource" uid="uid://bdipnowkn75xs" path="res://scripts/entities/enemies/data/evil_skull.tres" id="2_aftjp"]
+[ext_resource type="Texture2D" uid="uid://ijx7fc2kgqf7" path="res://assets/entities/enemies/evil_skull.png" id="2_omacm"]
+[ext_resource type="Script" uid="uid://cmct7xrv7db1y" path="res://scripts/entities/enemies/enemy_ai.gd" id="3_aftjp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_42evj"]
+radius = 13.0
+
+[node name="EvilSkull" type="CharacterBody2D" unique_id=708257810]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_7pusy")
+base_stats = ExtResource("2_aftjp")
+
+[node name="EvilSkullSprite" type="Sprite2D" parent="." unique_id=1288155935]
+position = Vector2(0, -26)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_omacm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=345580801]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_42evj")
+
+[node name="EnemyAI" type="Node" parent="." unique_id=533695755]
+script = ExtResource("3_aftjp")
