@@ -21,6 +21,10 @@ func _physics_process(_delta: float) -> void:
 
 
 func setup(p_damage: float) -> void:
+	## Prints de debug
+	print("attack_speed do .tres: ", data.attack_speed)
+	print("wait_time calculado: ", 1.0 / data.attack_speed)
+	
 	print("damage base: ", p_damage)
 	print("multiplier: ", data.damage_multiplier)
 	damage = p_damage * data.damage_multiplier
