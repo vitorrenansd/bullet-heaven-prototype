@@ -26,6 +26,7 @@ func _ready() -> void:
 	start_wave()
 
 func _process(_delta: float) -> void:
+	# mantém o path centrado no player para spawns sempre fora da tela
 	spawn_path_node.global_position = player.global_position
 
 func start_wave() -> void:
@@ -42,6 +43,7 @@ func _spawn_next_enemy() -> void:
 	spawn_path_follow.progress_ratio = randf()
 	var spawn_position := spawn_path_follow.global_position
 
+	# posição definida após add_child para respeitar o espaço global
 	var enemy: Enemy = enemy_scene.instantiate()
 	get_tree().current_scene.add_child(enemy)
 	enemy.global_position = spawn_position
@@ -66,5 +68,6 @@ func _on_wave_cleared() -> void:
 		return
 
 	current_wave += 1
+	# aguarda antes de iniciar a próxima wave. sons e efeitos futuros
 	await get_tree().create_timer(between_waves_interval).timeout
 	start_wave()

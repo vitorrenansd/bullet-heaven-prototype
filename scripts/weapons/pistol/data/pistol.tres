@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://bc5ex426hwd5o"]
+
+[ext_resource type="Script" uid="uid://8fo8xqfyc6lu" path="res://scripts/weapons/weapon_data.gd" id="1_02pao"]
+[ext_resource type="PackedScene" uid="uid://dbeg4hryviajr" path="res://scripts/weapons/pistol/pistol_bullet.tscn" id="1_tj1nc"]
+
+[resource]
+script = ExtResource("1_02pao")
+damage_multiplier = 0.5
+bullet_scene = ExtResource("1_tj1nc")
+metadata/_custom_type_script = "uid://8fo8xqfyc6lu"

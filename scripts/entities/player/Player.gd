@@ -18,7 +18,7 @@ var health_regen: int
 func _ready() -> void: # Chama quando o obj fica pronto
 	recalculate_stats()
 	var weapon: Weapon = get_node("Pistol")
-	weapon.setup(attack_speed, damage)
+	weapon.setup(damage)
 
 func _physics_process(delta: float) -> void:
 	movement.tick(delta)
