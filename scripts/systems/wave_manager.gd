@@ -43,10 +43,9 @@ func _spawn_next_enemy() -> void:
 	spawn_path_follow.progress_ratio = randf()
 	var spawn_position := spawn_path_follow.global_position
 
-	# posição definida após add_child para respeitar o espaço global
 	var enemy: Enemy = enemy_scene.instantiate()
-	get_tree().current_scene.add_child(enemy)
-	enemy.global_position = spawn_position
+	enemy.position = spawn_position  # posição local antes do add_child
+	get_tree().current_scene.add_child.call_deferred(enemy)
 	enemy.died.connect(_on_enemy_died)
 
 	_enemies_to_spawn -= 1
