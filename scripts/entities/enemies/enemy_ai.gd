@@ -11,10 +11,13 @@ func _physics_process(_delta: float) -> void:
 	chase_player()
 
 func chase_player() -> void:
+	var distance := enemy.global_position.distance_to(player.global_position)
+	
+	if distance <= ATTACK_RANGE:
+		enemy.velocity = Vector2.ZERO # para de empurrar quando esta perto (vish)
+		enemy.attack(player)
+		return
+	
 	var direction := (player.global_position - enemy.global_position).normalized()
 	enemy.velocity = direction * enemy.base_stats.move_speed
 	enemy.move_and_slide()
-	
-	# ataca quando esta dentro do range
-	if enemy.global_position.distance_to(player.global_position) <= ATTACK_RANGE:
-		enemy.attack(player)
