@@ -71,8 +71,3 @@ func _on_wave_cleared() -> void:
 	# aguarda antes de iniciar a próxima wave. sons e efeitos futuros
 	await get_tree().create_timer(between_waves_interval).timeout
 	start_wave()
-
-
-func _on_player_health_depleted() -> void:
-	print("GAME OVER")
-	get_tree().paused = true

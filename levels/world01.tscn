@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bhontrv18owek"]
 
+[ext_resource type="Script" uid="uid://b1d7lauld5es6" path="res://scripts/entities/game.gd" id="1_455lp"]
 [ext_resource type="Script" uid="uid://c8heher24bbpj" path="res://scripts/systems/wave_manager.gd" id="1_u36wx"]
 [ext_resource type="PackedScene" uid="uid://b83w8xqkquk6c" path="res://scripts/entities/enemies/evil_skull.tscn" id="2_j65dg"]
 [ext_resource type="Script" uid="uid://dtak0xidrut3q" path="res://scripts/show_fps_label.gd" id="2_o246y"]
@@ -13,12 +14,8 @@ _data = {
 }
 point_count = 5
 
-[node name="Game" type="Node2D" unique_id=1717154380 node_paths=PackedStringArray("spawn_path_node", "spawn_path_follow", "player")]
-script = ExtResource("1_u36wx")
-enemy_scene = ExtResource("2_j65dg")
-spawn_path_node = NodePath("Path2D")
-spawn_path_follow = NodePath("Path2D/EnemySpawner")
-player = NodePath("Player")
+[node name="Game" type="Node2D" unique_id=1717154380]
+script = ExtResource("1_455lp")
 
 [node name="Background" type="CanvasLayer" parent="." unique_id=1902307066]
 layer = -1
@@ -43,10 +40,18 @@ script = ExtResource("2_o246y")
 position = Vector2(640, 361)
 base_stats = SubResource("Resource_xh8g2")
 
-[node name="Path2D" type="Path2D" parent="." unique_id=1658094102]
+[node name="WaveManager" type="Node2D" parent="." unique_id=2130867879 node_paths=PackedStringArray("spawn_path_node", "spawn_path_follow", "player")]
+script = ExtResource("1_u36wx")
+enemy_scene = ExtResource("2_j65dg")
+spawn_path_node = NodePath("Path2D")
+spawn_path_follow = NodePath("Path2D/EnemySpawner")
+player = NodePath("../Player")
+metadata/_custom_type_script = "uid://c8heher24bbpj"
+
+[node name="Path2D" type="Path2D" parent="WaveManager" unique_id=1658094102]
 curve = SubResource("Curve2D_rxobr")
 
-[node name="EnemySpawner" type="PathFollow2D" parent="Path2D" unique_id=1775181980]
+[node name="EnemySpawner" type="PathFollow2D" parent="WaveManager/Path2D" unique_id=1775181980]
 unique_name_in_owner = true
 position = Vector2(-750, -460)
 
