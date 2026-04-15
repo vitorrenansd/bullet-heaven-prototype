@@ -42,5 +42,6 @@ func add_modifier(modifier: StatsModifier) -> void: # Add item na run atual do p
 
 func take_damage(amount: float) -> void:
 	current_health = ceil(current_health - amount)
+	print("player tomou: ", amount, " | HP ATUAL: ", current_health)
 	if current_health <= 0.0:
 		health_depleted.emit()
