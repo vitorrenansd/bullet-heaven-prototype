@@ -3,6 +3,7 @@ extends Area2D
 
 @export var shooting_point: Marker2D
 @export var data: WeaponData
+@export var weapon_range: Area2D
 
 var attack_speed: float
 var damage: float
@@ -20,7 +21,8 @@ func _physics_process(_delta: float) -> void:
 		lock_n_load()
 
 
-func setup(p_damage: float) -> void:
+func setup(p_damage: float, p_weapon_range: Area2D) -> void:
+	weapon_range = p_weapon_range
 	## Prints de debug
 	print("attack_speed do .tres: ", data.attack_speed)
 	print("wait_time calculado: ", 1.0 / data.attack_speed)
@@ -35,7 +37,7 @@ func setup(p_damage: float) -> void:
 	shoot_timer.autostart = false
 
 func lock_n_load() -> void:
-	var enemies_in_range := get_overlapping_bodies()
+	var enemies_in_range := weapon_range.get_overlapping_bodies()
 	if enemies_in_range.is_empty():
 		return
 

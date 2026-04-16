@@ -4,17 +4,11 @@
 [ext_resource type="Resource" uid="uid://bc5ex426hwd5o" path="res://scripts/weapons/pistol/data/pistol.tres" id="2_hwjeo"]
 [ext_resource type="Texture2D" uid="uid://jgmjwbnl2k6g" path="res://assets/weapons/pistol/pistol.png" id="2_nrugr"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_r3071"]
-radius = 296.0608
-
 [node name="Pistol" type="Area2D" unique_id=2034336085 node_paths=PackedStringArray("shooting_point")]
 collision_mask = 2
 script = ExtResource("1_bvgyv")
 shooting_point = NodePath("WeaponPivot/PistolSprite/ShootingPoint")
 data = ExtResource("2_hwjeo")
-
-[node name="Range" type="CollisionShape2D" parent="." unique_id=1568272561]
-shape = SubResource("CircleShape2D_r3071")
 
 [node name="WeaponPivot" type="Marker2D" parent="." unique_id=791174753]
 

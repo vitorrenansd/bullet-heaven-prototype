@@ -9,6 +9,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_exd8k"]
 radius = 14.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dr1lc"]
+size = Vector2(1188, 624)
+
 [node name="Player" type="CharacterBody2D" unique_id=909419159]
 script = ExtResource("3_exd8k")
 base_stats = ExtResource("2_dr1lc")
@@ -29,3 +32,10 @@ position = Vector2(0, -11)
 
 [node name="PlayerMovement" type="Node" parent="." unique_id=1540048118]
 script = ExtResource("4_hss88")
+
+[node name="WeaponRange" type="Area2D" parent="." unique_id=148976299]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponRange" unique_id=933529487]
+shape = SubResource("RectangleShape2D_dr1lc")
+debug_color = Color(0.80381453, 0.41804692, 0, 0.41960785)

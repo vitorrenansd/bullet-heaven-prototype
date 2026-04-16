@@ -13,12 +13,13 @@ var move_speed: float
 var health_regen: int
 
 @onready var movement: PlayerMovement = $PlayerMovement
+@onready var weapon_range: Area2D = $WeaponRange
 
 
 func _ready() -> void: # Chama quando o obj fica pronto
 	recalculate_stats()
 	var weapon: Weapon = get_node("Pistol")
-	weapon.setup(damage)
+	weapon.setup(damage, weapon_range)
 
 func _physics_process(delta: float) -> void:
 	movement.tick(delta)
