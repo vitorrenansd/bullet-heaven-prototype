@@ -4,6 +4,7 @@ extends Node2D
 signal wave_started(wave_number: int)
 signal wave_completed(wave_number: int)
 signal all_waves_completed
+signal enemy_spawned(enemy: Enemy)
 
 @export var enemy_scene: PackedScene
 @export var spawn_path_node: Path2D
@@ -47,6 +48,7 @@ func _spawn_next_enemy() -> void:
 	enemy.position = spawn_position  # posição local antes do add_child
 	get_tree().current_scene.add_child.call_deferred(enemy)
 	enemy.died.connect(_on_enemy_died)
+	enemy_spawned.emit(enemy)
 
 	_enemies_to_spawn -= 1
 
@@ -54,7 +56,7 @@ func _spawn_next_enemy() -> void:
 		await get_tree().create_timer(spawn_interval).timeout
 		_spawn_next_enemy()
 
-func _on_enemy_died() -> void:
+func _on_enemy_died(_xp_reward: int) -> void:
 	_enemies_alive -= 1
 	if _enemies_alive <= 0:
 		_on_wave_cleared()

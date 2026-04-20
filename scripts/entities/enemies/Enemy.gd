@@ -1,7 +1,7 @@
 class_name Enemy
 extends CharacterBody2D
 
-signal died
+signal died(xp_reward: int)
 
 @export var base_stats: BaseStats
 
@@ -28,5 +28,5 @@ func take_damage(amount: float) -> void:
 	current_health = ceil(current_health - amount)
 	if current_health <= 0:
 		_is_dead = true
-		died.emit()
+		died.emit(base_stats.xp_reward)
 		queue_free()

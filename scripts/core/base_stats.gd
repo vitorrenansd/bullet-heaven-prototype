@@ -6,3 +6,4 @@ extends Resource
 @export var attack_speed: float
 @export var move_speed: float
 @export var health_regen: int
+@export var xp_reward: int = 0

@@ -77,5 +77,13 @@ offset_bottom = 704.0
 script = ExtResource("8_dwio0")
 metadata/_custom_type_script = "uid://c2asc2j5vqggk"
 
+[node name="LevelLabel" type="Label" parent="HUDController/XPBar" unique_id=238206887]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -24.0
+offset_right = 41.0
+offset_bottom = -1.0
+text = "Lv. 1"
+
 [connection signal="health_changed" from="Player" to="HUDController/HealthBar" method="_on_player_health_changed"]
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
