@@ -3,9 +3,11 @@ extends Node
 
 @onready var wave_manager: WaveManager = $WaveManager
 @onready var player: Player = $Player
+@onready var hud: HUDController = $HUDController
 
 
 func _ready() -> void:
+	hud.setup(player)
 	player.health_depleted.connect(_on_game_over)
 	wave_manager.all_waves_completed.connect(_on_all_waves_completed)
 

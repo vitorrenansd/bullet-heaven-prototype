@@ -2,6 +2,7 @@ class_name Player
 extends CharacterBody2D
 
 signal health_depleted
+signal health_changed(current: float, maximum: float)
 
 @export var base_stats: BaseStats
 
@@ -43,6 +44,6 @@ func add_modifier(modifier: StatsModifier) -> void: # Add item na run atual do p
 
 func take_damage(amount: float) -> void:
 	current_health = ceil(current_health - amount)
-	print("player tomou: ", amount, " | HP ATUAL: ", current_health)
+	health_changed.emit(current_health, base_stats.health)
 	if current_health <= 0.0:
 		health_depleted.emit()

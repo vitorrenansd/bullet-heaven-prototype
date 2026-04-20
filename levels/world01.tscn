@@ -5,6 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://b83w8xqkquk6c" path="res://scripts/entities/enemies/evil_skull.tscn" id="2_j65dg"]
 [ext_resource type="Script" uid="uid://dtak0xidrut3q" path="res://scripts/show_fps_label.gd" id="2_o246y"]
 [ext_resource type="PackedScene" uid="uid://c0dtmhnxdbhgl" path="res://scripts/entities/player/player.tscn" id="3_1a0pv"]
+[ext_resource type="Script" uid="uid://mrqyw6lkp5pb" path="res://scripts/ui/hud/hud_controller.gd" id="6_mcbdv"]
+[ext_resource type="Script" uid="uid://dximu71svm3uy" path="res://scripts/ui/hud/health_bar.gd" id="7_c3uvt"]
+[ext_resource type="Script" uid="uid://c2asc2j5vqggk" path="res://scripts/ui/hud/xp_bar.gd" id="8_dwio0"]
 
 [sub_resource type="Resource" id="Resource_xh8g2"]
 
@@ -29,10 +32,9 @@ color = Color(0.6333038, 0.433297, 1, 1)
 layer = 2
 
 [node name="FPSLabel" type="Label" parent="ShowFPS" unique_id=2138043346]
-offset_left = 18.0
-offset_top = 13.0
-offset_right = 58.0
-offset_bottom = 36.0
+offset_left = 1189.0
+offset_right = 1229.0
+offset_bottom = 23.0
 text = "fps:"
 script = ExtResource("2_o246y")
 
@@ -55,4 +57,25 @@ curve = SubResource("Curve2D_rxobr")
 unique_name_in_owner = true
 position = Vector2(-750, -460)
 
+[node name="HUDController" type="CanvasLayer" parent="." unique_id=2058402164]
+script = ExtResource("6_mcbdv")
+metadata/_custom_type_script = "uid://mrqyw6lkp5pb"
+
+[node name="HealthBar" type="ProgressBar" parent="HUDController" unique_id=1512560505]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 209.0
+offset_bottom = 43.0
+script = ExtResource("7_c3uvt")
+metadata/_custom_type_script = "uid://dximu71svm3uy"
+
+[node name="XPBar" type="ProgressBar" parent="HUDController" unique_id=228305981]
+offset_left = 16.0
+offset_top = 677.0
+offset_right = 1264.0
+offset_bottom = 704.0
+script = ExtResource("8_dwio0")
+metadata/_custom_type_script = "uid://c2asc2j5vqggk"
+
+[connection signal="health_changed" from="Player" to="HUDController/HealthBar" method="_on_player_health_changed"]
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
