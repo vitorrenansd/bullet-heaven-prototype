@@ -25,7 +25,7 @@ var xp_to_next_level: int = 100 # base, o valor escala
 
 func _ready() -> void: # Chama quando o obj fica pronto
 	recalculate_stats()
-	var weapon: Weapon = get_node("Pistol")
+	var weapon: Weapon = get_node("Sniper")
 	weapon.setup(damage, weapon_range)
 
 func _physics_process(delta: float) -> void:

@@ -63,6 +63,7 @@ func fire() -> void:
 		new_bullet.global_position = shooting_point.global_position
 		new_bullet.global_rotation = start_angle + deg_to_rad(data.spread_angle * i)
 		new_bullet.damage = damage
+		new_bullet.piercing = data.piercing
 		get_tree().current_scene.add_child(new_bullet)
 
 	shoot_timer.start()
