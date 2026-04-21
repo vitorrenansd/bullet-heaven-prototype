@@ -18,7 +18,7 @@ scale = Vector2(0.2783333, 0.2783333)
 texture = ExtResource("3_gxb7k")
 
 [node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/SniperSprite" unique_id=1538930243]
-position = Vector2(138.81738, -1.5718547)
+position = Vector2(-148.60782, -1.5718536)
 
 [node name="ShootTimer" type="Timer" parent="." unique_id=1995320042]
 one_shot = true
