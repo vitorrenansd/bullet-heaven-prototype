@@ -43,6 +43,10 @@ func lock_n_load() -> void:
 			nearest_enemy = enemy
 
 	look_at(nearest_enemy.global_position)
+	## inverte o sprite caso esteja alem de 180 graus
+	var sprite: Sprite2D = $WeaponPivot/Sprite2D
+	sprite.flip_v = global_rotation > PI / 2 or global_rotation < -PI / 2
+	
 	fire()
 
 

@@ -7,17 +7,17 @@
 [node name="Pistol" type="Area2D" unique_id=2034336085 node_paths=PackedStringArray("shooting_point")]
 collision_mask = 2
 script = ExtResource("1_bvgyv")
-shooting_point = NodePath("WeaponPivot/PistolSprite/ShootingPoint")
+shooting_point = NodePath("WeaponPivot/Sprite2D/ShootingPoint")
 data = ExtResource("2_hwjeo")
 
 [node name="WeaponPivot" type="Marker2D" parent="." unique_id=791174753]
 
-[node name="PistolSprite" type="Sprite2D" parent="WeaponPivot" unique_id=755572146]
+[node name="Sprite2D" type="Sprite2D" parent="WeaponPivot" unique_id=755572146]
 position = Vector2(46, -3.000002)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_nrugr")
 
-[node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/PistolSprite" unique_id=1538930243]
+[node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Sprite2D" unique_id=1538930243]
 position = Vector2(-79.99999, -39.999977)
 
 [node name="ShootTimer" type="Timer" parent="." unique_id=1995320042]
