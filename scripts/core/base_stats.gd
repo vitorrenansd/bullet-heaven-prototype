@@ -1,6 +1,8 @@
 class_name BaseStats
 extends Resource
 
+@export var display_name: String = ""
+@export var description: String = ""
 @export var health: float
 @export var damage: float
 @export var attack_speed: float

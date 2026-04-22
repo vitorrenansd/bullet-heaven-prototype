@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="StatsModifier" format=3 uid="uid://mj4rnd24ycc6"]
+
+[ext_resource type="Script" uid="uid://cusadpdb5eqjf" path="res://scripts/core/stats_modifier.gd" id="1_bt0os"]
+
+[resource]
+script = ExtResource("1_bt0os")
+name = "+AtkSpd"
+description = "15% more attack speed"
+attack_speed_multiplier = 1.15
+metadata/_custom_type_script = "uid://cusadpdb5eqjf"

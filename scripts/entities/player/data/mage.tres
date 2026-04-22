@@ -1,9 +1,13 @@
 [gd_resource type="Resource" script_class="BaseStats" format=3 uid="uid://cqqhx4hwxtnr"]
 
 [ext_resource type="Script" uid="uid://goc0uhciwb2u" path="res://scripts/core/base_stats.gd" id="1_ki3ks"]
+[ext_resource type="Texture2D" uid="uid://n0rlk2ro3my2" path="res://assets/weapons/placeholder_icon.png" id="1_m4j7d"]
 
 [resource]
 script = ExtResource("1_ki3ks")
+display_name = "Mage"
+description = "asdasdasdasd"
+icon = ExtResource("1_m4j7d")
 health = 65.0
 damage = 14.0
 attack_speed = 1.5

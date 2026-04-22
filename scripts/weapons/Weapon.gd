@@ -3,8 +3,8 @@ extends Area2D
 
 @export var shooting_point: Marker2D
 @export var data: WeaponData
-@export var weapon_range: Area2D
 
+var weapon_range: Area2D
 var attack_speed: float
 var damage: float
 
@@ -21,18 +21,10 @@ func _physics_process(_delta: float) -> void:
 		lock_n_load()
 
 
-func setup(p_damage: float, p_weapon_range: Area2D) -> void:
+func setup(p_damage: float, p_attack_speed: float, p_weapon_range: Area2D) -> void:
 	weapon_range = p_weapon_range
-	## Prints de debug
-	print("attack_speed do .tres: ", data.attack_speed)
-	print("wait_time calculado: ", 1.0 / data.attack_speed)
-	
-	print("damage base: ", p_damage)
-	print("multiplier: ", data.damage_multiplier)
 	damage = p_damage * data.damage_multiplier
-	print("damage final: ", damage)
-	
-	shoot_timer.wait_time = 1.0 / data.attack_speed
+	shoot_timer.wait_time = 1.0 / (data.attack_speed * p_attack_speed)
 	shoot_timer.one_shot = true
 	shoot_timer.autostart = false
 

@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://baeiu8rf2u84s"]
+
+[ext_resource type="Script" uid="uid://cdd3o7nrbuh0" path="res://scripts/ui/upgrade_menu.gd" id="1_vn4yw"]
+
+[node name="UpgradeMenu" type="CanvasLayer" unique_id=49541678]
+visible = false
+script = ExtResource("1_vn4yw")
+
+[node name="Panel" type="Panel" parent="." unique_id=1932156543]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -180.0
+offset_right = 320.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Panel" unique_id=1453617177]
+layout_mode = 0
+offset_top = 78.0
+offset_right = 640.0
+offset_bottom = 198.0
+alignment = 1
+
+[node name="Button1" type="Button" parent="Panel/VBox" unique_id=2118170967]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="Panel/VBox" unique_id=1853373266]
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="Panel/VBox" unique_id=2003943288]
+layout_mode = 2

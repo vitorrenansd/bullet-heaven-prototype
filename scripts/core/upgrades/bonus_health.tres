@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="StatsModifier" format=3 uid="uid://bqpm71vu15mc0"]
+
+[ext_resource type="Script" uid="uid://cusadpdb5eqjf" path="res://scripts/core/stats_modifier.gd" id="1_mc5bl"]
+
+[resource]
+script = ExtResource("1_mc5bl")
+name = "+Health"
+description = "20 more HP points"
+bonus_health = 20
+metadata/_custom_type_script = "uid://cusadpdb5eqjf"

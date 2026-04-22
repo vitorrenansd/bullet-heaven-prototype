@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_02pao")
-damage_multiplier = 0.5
+display_name = "Pistol"
+damage_multiplier = 0.75
 bullet_scene = ExtResource("1_tj1nc")
 metadata/_custom_type_script = "uid://8fo8xqfyc6lu"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="StatsModifier" format=3 uid="uid://bhf6asnvv7jbh"]
+
+[ext_resource type="Script" uid="uid://cusadpdb5eqjf" path="res://scripts/core/stats_modifier.gd" id="1_tm4j2"]
+
+[resource]
+script = ExtResource("1_tm4j2")
+name = "+Speed"
+description = "15% more move speed"
+move_speed_multiplier = 1.15
+metadata/_custom_type_script = "uid://cusadpdb5eqjf"

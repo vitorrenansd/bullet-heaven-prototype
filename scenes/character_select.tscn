@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://cx3bu40d7mnvy"]
+
+[ext_resource type="Script" uid="uid://l07jqh3ax4r" path="res://scripts/ui/character_select.gd" id="1_x8mhf"]
+[ext_resource type="Script" uid="uid://goc0uhciwb2u" path="res://scripts/core/base_stats.gd" id="2_uxcyu"]
+[ext_resource type="Resource" uid="uid://bgk7peouppyek" path="res://scripts/entities/player/data/warrior.tres" id="3_fa52j"]
+[ext_resource type="Resource" uid="uid://cqqhx4hwxtnr" path="res://scripts/entities/player/data/mage.tres" id="4_5wdeo"]
+[ext_resource type="Script" uid="uid://8fo8xqfyc6lu" path="res://scripts/weapons/weapon_data.gd" id="5_5cdo8"]
+[ext_resource type="Resource" uid="uid://bc5ex426hwd5o" path="res://scripts/weapons/pistol/data/pistol.tres" id="6_pfxxa"]
+[ext_resource type="Resource" uid="uid://cekn1a5gxdn6j" path="res://scripts/weapons/sniper/data/sniper.tres" id="7_p44ra"]
+[ext_resource type="PackedScene" uid="uid://c1mcch81vn0jd" path="res://scripts/weapons/pistol/pistol.tscn" id="8_fqvby"]
+[ext_resource type="PackedScene" uid="uid://qhieg1q6l50t" path="res://scripts/weapons/sniper/sniper.tscn" id="9_0sghn"]
+
+[node name="CharacterSelect" type="Control" unique_id=1284746002]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 126.0
+offset_top = 113.0
+offset_right = 126.0
+offset_bottom = 113.0
+script = ExtResource("1_x8mhf")
+available_classes = Array[ExtResource("2_uxcyu")]([ExtResource("3_fa52j"), ExtResource("4_5wdeo")])
+available_weapons = Array[ExtResource("5_5cdo8")]([ExtResource("6_pfxxa"), ExtResource("7_p44ra")])
+available_weapon_scenes = Array[PackedScene]([ExtResource("8_fqvby"), ExtResource("9_0sghn")])
+
+[node name="Panel" type="Panel" parent="." unique_id=224695238]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 480.0
+
+[node name="HBox" type="HBoxContainer" parent="Panel" unique_id=33032882]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 480.0
+
+[node name="ClassSection" type="VBoxContainer" parent="Panel/HBox" unique_id=705544719]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/HBox/ClassSection" unique_id=1813176777]
+layout_mode = 2
+text = "Classe"
+
+[node name="GridContainer" type="GridContainer" parent="Panel/HBox/ClassSection" unique_id=1847948900]
+layout_mode = 2
+
+[node name="WeaponSection" type="VBoxContainer" parent="Panel/HBox" unique_id=1419898497]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/HBox/WeaponSection" unique_id=641542151]
+layout_mode = 2
+text = "Arma"
+
+[node name="GridContainer" type="GridContainer" parent="Panel/HBox/WeaponSection" unique_id=1807508534]
+layout_mode = 2
+
+[node name="ConfirmButton" type="Button" parent="Panel" unique_id=1987623276]
+layout_mode = 0
+offset_left = 521.0
+offset_top = 416.0
+offset_right = 617.0
+offset_bottom = 464.0
+text = "CONFIRM"

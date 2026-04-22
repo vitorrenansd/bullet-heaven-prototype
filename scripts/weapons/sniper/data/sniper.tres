@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("1_j6gth")
-damage_multiplier = 2.0
-piercing = 10
+display_name = "Sniper"
+piercing = 5
 attack_speed = 0.5
 bullet_scene = ExtResource("1_t53ks")
 metadata/_custom_type_script = "uid://8fo8xqfyc6lu"

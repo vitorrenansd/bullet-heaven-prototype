@@ -1,6 +1,7 @@
 class_name WeaponData
 extends Resource
 
+@export var display_name: String = ""
 @export var damage_multiplier: float = 1.0
 @export var piercing: int = 1
 @export var projectile_count: int = 1

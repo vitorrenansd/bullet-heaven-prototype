@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="StatsModifier" format=3 uid="uid://crli8oi2vlbym"]
+
+[ext_resource type="Script" uid="uid://cusadpdb5eqjf" path="res://scripts/core/stats_modifier.gd" id="1_87gfj"]
+
+[resource]
+script = ExtResource("1_87gfj")
+name = "+XP Gain"
+description = "50% more XP gain"
+xp_multiplier = 1.5
+metadata/_custom_type_script = "uid://cusadpdb5eqjf"

@@ -8,6 +8,15 @@
 [ext_resource type="Script" uid="uid://mrqyw6lkp5pb" path="res://scripts/ui/hud/hud_controller.gd" id="6_mcbdv"]
 [ext_resource type="Script" uid="uid://dximu71svm3uy" path="res://scripts/ui/hud/health_bar.gd" id="7_c3uvt"]
 [ext_resource type="Script" uid="uid://c2asc2j5vqggk" path="res://scripts/ui/hud/xp_bar.gd" id="8_dwio0"]
+[ext_resource type="Script" uid="uid://cx5qj1lwf7arv" path="res://scripts/systems/upgrade_system.gd" id="9_xd356"]
+[ext_resource type="Script" uid="uid://cusadpdb5eqjf" path="res://scripts/core/stats_modifier.gd" id="10_xra4t"]
+[ext_resource type="Resource" uid="uid://crli8oi2vlbym" path="res://scripts/core/upgrades/bonus_xp.tres" id="11_7guyy"]
+[ext_resource type="Resource" uid="uid://bhf6asnvv7jbh" path="res://scripts/core/upgrades/bonus_speed.tres" id="12_voeyx"]
+[ext_resource type="Resource" uid="uid://ci35blkj784i0" path="res://scripts/core/upgrades/bonus_damage.tres" id="13_hdu6o"]
+[ext_resource type="Resource" uid="uid://bqpm71vu15mc0" path="res://scripts/core/upgrades/bonus_health.tres" id="14_kd4ws"]
+[ext_resource type="Resource" uid="uid://mj4rnd24ycc6" path="res://scripts/core/upgrades/bonus_attack_speed.tres" id="15_6oeed"]
+[ext_resource type="Resource" uid="uid://bkpfm2bjrengc" path="res://scripts/core/upgrades/bonus_health_regen.tres" id="16_plq56"]
+[ext_resource type="PackedScene" uid="uid://baeiu8rf2u84s" path="res://scripts/ui/upgrade_menu.tscn" id="17_xd356"]
 
 [sub_resource type="Resource" id="Resource_xh8g2"]
 
@@ -66,8 +75,17 @@ offset_left = 16.0
 offset_top = 16.0
 offset_right = 209.0
 offset_bottom = 43.0
+show_percentage = false
 script = ExtResource("7_c3uvt")
 metadata/_custom_type_script = "uid://dximu71svm3uy"
+
+[node name="HPLabel" type="Label" parent="HUDController/HealthBar" unique_id=1275778120]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 1.0
+offset_right = 75.0
+offset_bottom = 24.0
+text = "100 / 100"
 
 [node name="XPBar" type="ProgressBar" parent="HUDController" unique_id=228305981]
 offset_left = 16.0
@@ -84,6 +102,13 @@ offset_top = -24.0
 offset_right = 41.0
 offset_bottom = -1.0
 text = "Lv. 1"
+
+[node name="UpgradeSystem" type="Node" parent="." unique_id=32433480]
+script = ExtResource("9_xd356")
+available_upgrades = Array[ExtResource("10_xra4t")]([ExtResource("11_7guyy"), ExtResource("12_voeyx"), ExtResource("13_hdu6o"), ExtResource("14_kd4ws"), ExtResource("15_6oeed"), ExtResource("16_plq56")])
+metadata/_custom_type_script = "uid://cx5qj1lwf7arv"
+
+[node name="UpgradeMenu" parent="." unique_id=1837076212 instance=ExtResource("17_xd356")]
 
 [connection signal="health_changed" from="Player" to="HUDController/HealthBar" method="_on_player_health_changed"]
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
