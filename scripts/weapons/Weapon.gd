@@ -9,6 +9,7 @@ var attack_speed: float
 var damage: float
 
 @onready var shoot_timer: Timer = $ShootTimer
+@onready var sprite: Sprite2D = $WeaponPivot/Sprite2D
 
 
 func _ready() -> void:
@@ -33,27 +34,34 @@ func lock_n_load() -> void:
 	if enemies_in_range.is_empty():
 		return
 
-	var nearest_enemy := enemies_in_range[0]
-	var nearest_dist := global_position.distance_squared_to(nearest_enemy.global_position)
+	var nearest_enemy := _find_nearest(enemies_in_range)
+	var target_angle := shooting_point.global_position.angle_to_point(nearest_enemy.global_position)
+	
+	## inverte o sprite caso esteja alem de 180 graus de giro
+	sprite.flip_v = target_angle > PI / 2 or target_angle < -PI / 2
+	
+	## tween apenas visual pra ficar gostoso
+	var tween := create_tween()
+	tween.tween_property(self, "rotation", target_angle, shoot_timer.wait_time * 0.3)
+	
+	shoot_timer.start()
+	## atira na hora com o angulo correto, sem esperar o tween acima
+	## tentei esperar o tween mas o tiro ficou com atraso
+	fire(target_angle)
 
-	for enemy in enemies_in_range:
+func _find_nearest(enemies: Array) -> Enemy:
+	var nearest: Enemy = enemies[0]
+	var nearest_dist := global_position.distance_squared_to(nearest.global_position)
+	for enemy in enemies:
 		var dist := global_position.distance_squared_to(enemy.global_position)
 		if dist < nearest_dist:
 			nearest_dist = dist
-			nearest_enemy = enemy
+			nearest = enemy
+	return nearest
 
-	look_at(nearest_enemy.global_position)
-	## inverte o sprite caso esteja alem de 180 graus
-	var sprite: Sprite2D = $WeaponPivot/Sprite2D
-	sprite.flip_v = global_rotation > PI / 2 or global_rotation < -PI / 2
-	
-	fire()
-
-
-func fire() -> void:
+func fire(target_angle: float) -> void:
 	# calcula o angulo inicial para centralizar o spread
-	var start_angle := global_rotation - deg_to_rad(data.spread_angle * (data.projectile_count - 1) / 2.0)
-
+	var start_angle := target_angle - deg_to_rad(data.spread_angle * (data.projectile_count - 1) / 2.0)
 	for i in data.projectile_count:
 		var new_bullet := data.bullet_scene.instantiate()
 		new_bullet.global_position = shooting_point.global_position
@@ -61,5 +69,3 @@ func fire() -> void:
 		new_bullet.damage = damage
 		new_bullet.piercing = data.piercing
 		get_tree().current_scene.add_child(new_bullet)
-
-	shoot_timer.start()

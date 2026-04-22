@@ -53,7 +53,7 @@ func _spawn_next_enemy() -> void:
 	_enemies_to_spawn -= 1
 
 	if _enemies_to_spawn > 0:
-		await get_tree().create_timer(spawn_interval).timeout
+		await get_tree().create_timer(spawn_interval, false).timeout
 		_spawn_next_enemy()
 
 func _on_enemy_died(_xp_reward: int) -> void:
@@ -70,5 +70,5 @@ func _on_wave_cleared() -> void:
 
 	current_wave += 1
 	# aguarda antes de iniciar a próxima wave. sons e efeitos futuros
-	await get_tree().create_timer(between_waves_interval).timeout
+	await get_tree().create_timer(between_waves_interval, false).timeout
 	start_wave()
