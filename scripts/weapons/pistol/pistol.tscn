@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c1mcch81vn0jd"]
 
-[ext_resource type="Script" uid="uid://bmwugmy7bb3ef" path="res://scripts/weapons/weapon.gd" id="1_bvgyv"]
+[ext_resource type="Script" uid="uid://qmqfhe5jhwen" path="res://scripts/weapons/weapon.gd" id="1_bvgyv"]
 [ext_resource type="Resource" uid="uid://bc5ex426hwd5o" path="res://scripts/weapons/pistol/data/pistol.tres" id="2_hwjeo"]
 [ext_resource type="Texture2D" uid="uid://jgmjwbnl2k6g" path="res://assets/weapons/pistol/pistol.png" id="2_nrugr"]
 

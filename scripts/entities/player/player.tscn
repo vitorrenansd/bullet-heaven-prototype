@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bth2uudka5ltl" path="res://assets/entities/player/placeholder_player.png" id="1_508ok"]
 [ext_resource type="Resource" uid="uid://cqqhx4hwxtnr" path="res://scripts/entities/player/data/mage.tres" id="2_dr1lc"]
-[ext_resource type="Script" uid="uid://d4bsxujtqn3ml" path="res://scripts/entities/player/player.gd" id="3_exd8k"]
+[ext_resource type="Script" uid="uid://uftqcx70il62" path="res://scripts/entities/player/player.gd" id="3_exd8k"]
 [ext_resource type="Script" uid="uid://8q1kh7v0hvd5" path="res://scripts/entities/player/player_movement.gd" id="4_hss88"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_exd8k"]

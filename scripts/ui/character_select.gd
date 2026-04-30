@@ -1,8 +1,6 @@
 class_name CharacterSelect
 extends Control
 
-signal selection_confirmed
-
 @export var available_classes: Array[BaseStats] = []
 @export var available_weapons: Array[WeaponData] = []
 @export var available_weapon_scenes: Array[PackedScene] = []
